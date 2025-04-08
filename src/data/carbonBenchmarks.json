@@ -1,0 +1,7 @@
+{
+    "healthcare": { "perEmployee": 0.5, "perSqFt": 0.02, "perKWh": 0.4 },
+    "tech": { "perEmployee": 0.3, "perSqFt": 0.015, "perKWh": 0.35 },
+    "manufacturing": { "perEmployee": 1.0, "perSqFt": 0.05, "perKWh": 0.6 },
+    "oilGas": { "perEmployee": 2.0, "perSqFt": 0.1, "perKWh": 0.8 },
+    "default": { "perEmployee": 0.5, "perSqFt": 0.02, "perKWh": 0.4 }
+  }

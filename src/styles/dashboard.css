@@ -1,0 +1,219 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  /* background: linear-gradient(135deg, #1e3c72, #2a5298); */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+.dashboard-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.calculator-form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-title {
+  font-size: 1.8rem;
+  color: #1e3c72;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 1rem;
+  color: #1e3c72;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #2a5298;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #1e3c72;
+  box-shadow: 0 0 5px rgba(30, 60, 114, 0.5);
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.checkbox-label input {
+  margin-right: 10px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-button:hover {
+  background: linear-gradient(90deg, #2a5298, #1e3c72);
+}
+
+.result-container {
+  text-align: center;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.result-indicator {
+  padding: 20px;
+  border-radius: 50%;
+  color: white;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.result-high {
+  background-color: #dc3545;
+}
+.result-medium {
+  background-color: #fd7e14;
+}
+.result-low {
+  background-color: #ffc107;
+}
+.result-eco {
+  background-color: #28a745;
+}
+
+.result-title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.result-text {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.react-flow__node {
+  font-size: 1rem;
+  text-align: center;
+  min-width: 120px;
+  transition: transform 0.3s;
+}
+
+.react-flow__node:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.react-flow__edge-path {
+  stroke: #ffffff;
+  stroke-width: 2px;
+}
+
+.react-flow__controls {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.react-flow__background {
+  opacity: 0.3;
+}
+.flowchart-container {
+  height: 600px;
+  width: 100%;
+  margin-top: 30px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  border-radius: 15px;
+  overflow: visible;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: block;
+}
+
+.react-flow__renderer {
+  width: 100% !important;
+  height: 100% !important;
+  transform: none !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+  .dashboard-title {
+    font-size: 1.8rem;
+  }
+
+  .calculator-form,
+  .result-container {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+  }
+
+  .form-input,
+  .submit-button {
+    font-size: 0.9rem;
+  }
+
+  .flowchart-container {
+    height: 400px;
+  }
+
+  .result-flowchart-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
