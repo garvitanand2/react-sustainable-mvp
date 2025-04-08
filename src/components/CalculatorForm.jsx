@@ -39,8 +39,14 @@ const CalculatorForm = ({ setResult, onCalculate }) => {
     else if (percentage > 10) category = "Low";
     else category = "Eco-friendly";
 
-    console.log("Calculated Result:", { emission, percentage, category });
-    setResult({ emission, percentage, category });
+    console.log("Calculated Result:", {
+      emission,
+      percentage,
+      category,
+      industry,
+      sources,
+    });
+    setResult({ emission, percentage, category, industry, sources });
     onCalculate();
   };
 
@@ -76,7 +82,6 @@ const CalculatorForm = ({ setResult, onCalculate }) => {
           <option value="oilGas">Oil & Gas</option>
         </select>
       </div>
-
       <div className="form-group">
         <label className="form-label">Number of Employees</label>
         <input
@@ -89,7 +94,6 @@ const CalculatorForm = ({ setResult, onCalculate }) => {
           placeholder="e.g., 50"
         />
       </div>
-
       <div className="form-group">
         <label className="form-label">Operational Area (sq. ft)</label>
         <input
@@ -102,7 +106,6 @@ const CalculatorForm = ({ setResult, onCalculate }) => {
           placeholder="e.g., 1000"
         />
       </div>
-
       <div className="form-group">
         <label className="form-label">Monthly Energy (kWh)</label>
         <input
@@ -115,7 +118,6 @@ const CalculatorForm = ({ setResult, onCalculate }) => {
           placeholder="e.g., 5000"
         />
       </div>
-
       <div className="form-group">
         <label className="form-label">Energy Sources</label>
         <div className="checkbox-group">
@@ -132,7 +134,6 @@ const CalculatorForm = ({ setResult, onCalculate }) => {
           ))}
         </div>
       </div>
-
       <button type="submit" className="submit-button">
         Calculate Now
       </button>

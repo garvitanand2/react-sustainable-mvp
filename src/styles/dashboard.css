@@ -170,12 +170,12 @@ body {
   opacity: 0.3;
 }
 .flowchart-container {
-  height: 600px;
-  width: 100%;
-  margin-top: 30px;
+  height: 800px;
+  width: 1000px;
+  margin: 30px auto;
   background: linear-gradient(135deg, #1e3c72, #2a5298);
   border-radius: 15px;
-  overflow: visible;
+  overflow: auto; /* Changed to auto for scrollbars when needed */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   position: relative;
   display: block;

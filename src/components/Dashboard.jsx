@@ -7,10 +7,19 @@ import "../../src/styles/dashboard.css";
 const Dashboard = () => {
   const [result, setResult] = useState(null);
   const [showResultAndFlowchart, setShowResultAndFlowchart] = useState(false);
+  const [checklist, setChecklist] = useState(() => {
+    const saved = localStorage.getItem("carbonChecklist");
+    return saved ? JSON.parse(saved) : {};
+  });
 
   const handleCalculate = () => {
     console.log("Showing result and flowchart");
     setShowResultAndFlowchart(true);
+  };
+
+  const updateChecklist = (newChecklist) => {
+    setChecklist(newChecklist);
+    localStorage.setItem("carbonChecklist", JSON.stringify(newChecklist));
   };
 
   return (
@@ -24,7 +33,11 @@ const Dashboard = () => {
       {showResultAndFlowchart && result && (
         <div className="result-flowchart-container">
           <ResultSummary result={result} />
-          <FlowchartView />
+          <FlowchartView
+            result={result}
+            checklist={checklist}
+            updateChecklist={updateChecklist}
+          />
         </div>
       )}
     </div>
