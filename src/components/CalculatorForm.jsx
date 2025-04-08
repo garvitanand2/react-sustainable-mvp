@@ -13,8 +13,6 @@ const CalculatorForm = ({ setResult, onCalculate }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted with data:", formData);
-
     const { industry, employees, area, energy, sources } = formData;
 
     if (!industry || !employees || !area || !energy) {
@@ -44,9 +42,21 @@ const CalculatorForm = ({ setResult, onCalculate }) => {
       percentage,
       category,
       industry,
+      employees,
+      area,
+      energy,
       sources,
     });
-    setResult({ emission, percentage, category, industry, sources });
+    setResult({
+      emission,
+      percentage,
+      category,
+      industry,
+      employees,
+      area,
+      energy,
+      sources,
+    });
     onCalculate();
   };
 
@@ -65,21 +75,31 @@ const CalculatorForm = ({ setResult, onCalculate }) => {
 
   return (
     <form onSubmit={handleSubmit} className="calculator-form">
-      <h2 className="form-title">Redwood AI Carbon Footprint Calculator</h2>
+      {/* <h2 className="form-title">Redwood AI Carbon Footprint Calculator</h2> */}
       <div className="form-group">
         <label className="form-label">Industry</label>
         <select
           name="industry"
           value={formData.industry}
           onChange={handleInputChange}
-          className="form-input"
+          className="form-input dropdown"
           required
         >
-          <option value="">Select Industry</option>
-          <option value="healthcare">Healthcare</option>
-          <option value="tech">Tech</option>
-          <option value="manufacturing">Manufacturing</option>
-          <option value="oilGas">Oil & Gas</option>
+          <option style={{ color: "black" }} value="">
+            Select Industry
+          </option>
+          <option style={{ color: "black" }} value="healthcare">
+            Healthcare
+          </option>
+          <option style={{ color: "black" }} value="tech">
+            Tech
+          </option>
+          <option style={{ color: "black" }} value="manufacturing">
+            Manufacturing
+          </option>
+          <option style={{ color: "black" }} value="oilGas">
+            Oil & Gas
+          </option>
         </select>
       </div>
       <div className="form-group">
@@ -129,13 +149,15 @@ const CalculatorForm = ({ setResult, onCalculate }) => {
                 checked={formData.sources.includes(source)}
                 onChange={handleInputChange}
               />
-              {source.charAt(0).toUpperCase() + source.slice(1)}
+              <span className="checkbox-text">
+                {source.charAt(0).toUpperCase() + source.slice(1)}
+              </span>
             </label>
           ))}
         </div>
       </div>
       <button type="submit" className="submit-button">
-        Calculate Now
+        <span>Calculate Now</span>
       </button>
     </form>
   );

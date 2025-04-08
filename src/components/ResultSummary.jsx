@@ -3,12 +3,16 @@ import "../../src/styles/dashboard.css";
 
 const ResultSummary = ({ result }) => {
   const { emission, percentage, category } = result;
-  const colorClass = {
-    High: "result-high",
-    Medium: "result-medium",
-    Low: "result-low",
-    "Eco-friendly": "result-eco",
-  }[category];
+
+  // Determine color class based on percentage range
+  let colorClass = "result-eco"; // Default to eco-friendly (green)
+  if (percentage > 50) {
+    colorClass = "result-high"; // Red for > 50%
+  } else if (percentage >= 10 && percentage <= 50) {
+    colorClass = "result-medium"; // Yellow for 10-50%
+  } else if (percentage < 10) {
+    colorClass = "result-eco"; // Green for < 10%
+  }
 
   return (
     <div className="result-container">
